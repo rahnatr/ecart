@@ -1,6 +1,12 @@
 {%  extends 'blank_layout.html' %}
-{% block home_content %}
-        {% include 'home_content.html' %}
-    {% endblock home_content %}
 
-{% include 'banner_layout.html' %}
+{% block banner %}       
+    {% include 'banner_layout.html' %}
+
+{% endblock banner %}
+
+{% block home_content %}  
+    {% include 'home_layout.html' %}
+{% endblock home_content %}
+   
+

@@ -13,21 +13,22 @@
 </head>
 
 <body>
-    {% block header %}
-        {% include 'header.html' %}
-    {% endblock header %} 
-    
-    {% block content %}
 
-    {% block banner %}
+
+    {% block header_layout %}
+        {% include 'header_layout.html' %}
+    {% endblock header_layout %} 
+
+    {% block banner %}       
+   
 
 {% endblock banner %}
 
-<!-- {% block home_content %}
-        {% include 'home_content.html' %}
-    {% endblock home_content %} -->
+{% block home_content %}  
+    
+{% endblock home_content %}
 
-    {% endblock content %}
+   
 
     
     <!-- Offer

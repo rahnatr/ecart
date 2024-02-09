@@ -1,0 +1,46 @@
+{% load static %}
+
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="{% static 'images/image1.png' %}" width="100%">
+            </div>
+            <div class="col-2">
+                
+                <div class="form-container">
+                    <div class="form-btn">
+                        {% comment %} javascript {% endcomment %}
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="Indicator">
+                    </div>
+                    {% if messages %}
+                    <div class="mmessage-container" >
+                        {% for message in messages %}
+                        <p class="{{message.tags}}">{{message}}</p>
+                        {%  endfor %}
+                    </div>
+                    {% endif %}
+                    <form id="LoginForm" method="post" entype="multipart/form-data" >
+                        {% csrf_token %}
+                        <input type="text" required name="username" required placeholder="username">
+                        <input type="password" required name="password" placeholder="password">
+                        <button type="submit" name="btn_login" class="btn">Login</button>
+                        <a href="">Forget Password</a>
+                    </form>
+
+                    <form id="RegForm" method="post" entype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="username" maxlength="10" minlength="3" required placeholder="username">
+                        <input type="email" name="email" required placeholder="Email">
+                        <input type="password" maxlength="6" name="password" required placeholder="password">
+                        <input type="address" name="address" minlength="5" placeholder="address">
+                        <input type="phonenumber" name="phonenumber" minlength="10" placeholder="phonenumber">
+                        <button type="submit" name="btn_register" class="btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

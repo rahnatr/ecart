@@ -5,8 +5,11 @@ from django.contrib.auth.models import User
 class Customer(models.Model):
     LIVE=1
     DELETE=0
-    DELETE_CHOICE=((LIVE,'Live'),(DELETE,'Delete'))
-    name=models.CharField(max_length=200)    
+    DELETE_CHOICE=(
+        (LIVE,'Live'),
+        (DELETE,'Delete')
+    )
+    name=models.CharField(max_length=200,default='user')    
     address=models.CharField(max_length=500) 
     phonenumber=models.CharField(max_length=10)
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='customer_profile')   
@@ -16,6 +19,8 @@ class Customer(models.Model):
 
     def __str__(self)-> str:
         return self.name
+        # return self.user.username    #it is also correct
+
     
 
    

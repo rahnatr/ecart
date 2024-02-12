@@ -1,0 +1,39 @@
+{% load static %}
+{% load getstatus %}
+
+    <div class="small-container cart-page">
+        {% comment %} {% if messages %}
+                        <div class="mmessage-container" >
+                            {% for message in messages %}
+                            <p class="{{message.tags}}">{{message}}</p>
+                            {%  endfor %}
+                        </div>
+                        {% endif %} {% endcomment %}
+         
+        <table>
+            <tbody><tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Total price</th>
+                <th>Status</th>
+            </tr>
+            {% for order in orders %}
+                {% if order %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.created_at }}</td>
+                        <td>${{ order.total_price }}</td>
+                        <td>{% getstatus order.order_status %}</td>
+                    </tr>
+                {% else %}
+                    <p>No orders</p>
+                {% endif %}
+            {% endfor %}        
+        </tbody></table>        
+    </div>
+    
+
+
+
+
+

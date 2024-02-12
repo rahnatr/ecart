@@ -3,7 +3,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from django.urls import reverse
+# from django.urls import reverse
 from . models import Customer
 from django.contrib import messages
 
@@ -37,6 +37,7 @@ def account(request):
            
             #create customer account
             customer=Customer.objects.create(
+                name=user,
                 user=user,
                 phonenumber=phonenumber,
                 address=address

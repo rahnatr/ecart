@@ -23,7 +23,8 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/',admin.site.urls),
-    path('',include('products.urls'))
+    path('',include('products.urls')),
+    path('',include('customers.urls')),
     
     
 ]

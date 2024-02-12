@@ -385,10 +385,32 @@ th:last-child{
     padding: 50px 0;
     background: radial-gradient(#fff, #ffd6d6);
 }
+.message-container{
+    background: #fff;
+    width: 300px;
+    height:fit-content;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.error {
+    color: #ba3939;
+    /* background: #ffe0e0; */
+    /* border: 1px solid #a33a3a; */
+}
+.success{
+    color: #2ac039;
+    /* background: #ffe0e0; */
+    /* border: 1px solid #a33a3a; */
+}
+
 .form-container{
     background: #fff;
     width: 300px;
-    height: 400px;
+    height: 500px;
     position: relative;
     text-align: center;
     padding: 20px 0;
@@ -435,6 +457,7 @@ form .btn:focus{
 }
 #RegForm{
     left: 0;
+    
 }
 form a{
     font-size: 12px;
@@ -448,6 +471,9 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 }
+
+	
+
 
 /* Media query for menu */
 @media only screen and (max-width: 800px){
